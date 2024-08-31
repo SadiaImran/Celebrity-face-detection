@@ -1,7 +1,7 @@
 
 ### **README.md**
 
-```markdown
+
 # Celebrity Face Detection and Classification
 
 ## Overview
