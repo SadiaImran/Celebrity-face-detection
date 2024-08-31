@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Dropzone CSS -->
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-8">Sports Person Classifier</h1>
+
+        <div class="flex flex-wrap justify-center items-center mb-8">
+            <!-- Athlete images -->
+            <div class="text-center mx-4 my-2" id="lionel_messi">
+                <img src="./images/messi.jpeg" alt="Lionel Messi" class="rounded-full w-32 h-32 object-cover mx-auto">
+                <p class="mt-2">LIONEL MESSI</p>
+            </div>
+            <div class="text-center mx-4 my-2" id="maria_sharapova">
+                <img src="./images/sharapova.jpeg" alt="Maria Sharapova" class="rounded-full w-32 h-32 object-cover mx-auto">
+                <p class="mt-2">MARIA SHARAPOVA</p>
+            </div>
+            <div class="text-center mx-4 my-2" id="roger_federer">
+                <img src="./images/federer.jpeg" alt="Roger Federer" class="rounded-full w-32 h-32 object-cover mx-auto">
+                <p class="mt-2">ROGER FEDERER</p>
+            </div>
+            <div class="text-center mx-4 my-2" id="serena_williams">
+                <img src="./images/serena.jpeg" alt="Serena Williams" class="rounded-full w-32 h-32 object-cover mx-auto">
+                <p class="mt-2">SERENA WILLIAMS</p>
+            </div>
+            <div class="text-center mx-4 my-2" id="virat_kohli">
+                <img src="./images/virat.jpeg" alt="Virat Kohli" class="rounded-full w-32 h-32 object-cover mx-auto">
+                <p class="mt-2">VIRAT KOHLI</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center mb-8">
+            <!-- Dropzone -->
+            <div class="w-full max-w-md mb-4">
+                <form action="/file-upload" class="dropzone" id="dropzone">
+                    <div class="dz-message needsclick flex flex-col items-center">
+                        <img src="./images/upload.png" class="w-12 h-12 mb-2">
+                        <span class="note needsclick">Drop files here or click to upload</span>
+                    </div>
+                </form>
+            </div>
+        
+            <!-- Error and Classify Button Row -->
+            <div class="flex justify-between items-center w-full max-w-md mx-auto mb-8">
+                <!-- Error Message -->
+                <div class="w-11/12 p-2">
+                    <p id="error" class="text-red-600">Can't classify image. Classifier was not able to detect face and two eyes properly</p>
+                </div>
+                <!-- Classify Button -->
+                <div class="w-1/2 p-2 flex justify-end">
+                    <button id="submitBtn" type="button" class="bg-green-500 text-white px-4 py-2 rounded">Classify</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result and Class Table -->
+        <div class="flex flex-col items-center mb-8 -mt-5">
+            <!-- Result Holder -->
+            <div class="w-full max-w-3xl mb-6" id="resultHolder">
+                <!-- Content can be added here -->
+                <div class="text-center p-4 bg-white shadow rounded">
+                    <h2 class="text-xl font-semibold mb-8">Results</h2>
+                    <p id="content" class="mb-4">Content can be added here</p>
+                </div>
+            </div>
+
+            <!-- Class Table -->
+<div class="w-full max-w-3xl mb-10" id="divClassTable">
+    <table id="classTable" class="min-w-full bg-white border-gray-300 rounded-lg shadow-lg">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="px-4 py-2 text-left bg-green-500 text-white border-r-2 border-gray-300">Player</th>
+                <th class="px-4 py-2 text-left bg-green-500 text-white">Probability Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="px-4 py-2 border-r-2 border-gray-300">Lionel Messi</td>
+                <td id="score_lionel_messi" class="px-4 py-2"></td>
+            </tr>
+            <tr>
+                <td class="px-4 py-2 border-r-2 border-gray-300">Maria Sharapova</td>
+                <td id="score_maria_sharapova" class="px-4 py-2"></td>
+            </tr>
+            <tr>
+                <td class="px-4 py-2 border-r-2 border-gray-300">Roger Federer</td>
+                <td id="score_roger_federer" class="px-4 py-2"></td>
+            </tr>
+            <tr>
+                <td class="px-4 py-2 border-r-2 border-gray-300">Serena Williams</td>
+                <td id="score_serena_williams" class="px-4 py-2"></td>
+            </tr>
+            <tr>
+                <td class="px-4 py-2 border-r-2 border-gray-300">Virat Kohli</td>
+                <td id="score_virat_kohli" class="px-4 py-2"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
