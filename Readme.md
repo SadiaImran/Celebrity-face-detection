@@ -13,8 +13,6 @@ This project is a web-based application that utilizes machine learning to detect
 - **client/**: Contains the frontend code, including HTML, CSS, and JavaScript files, responsible for the user interface.
 - **model/**: Includes the machine learning model and associated scripts for face detection and classification.
 - **server/**: Contains the backend code powered by Flask, which handles API requests and serves the classification model.
-- **static/**: Stores static files like images, JavaScript libraries, and CSS files.
-- **templates/**: Contains HTML templates rendered by Flask.
 - **requirements.txt**: Lists all Python dependencies required to run the project.
 - **Procfile**: Used for deploying the application on platforms like Heroku.
 
